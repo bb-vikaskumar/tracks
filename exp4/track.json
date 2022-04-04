@@ -1,0 +1,46 @@
+{% import "rally.helpers" as rally with context %}
+{
+  "version": 2,
+  "description": "Tracker-generated track for exp4",
+  "indices": [
+    {
+      "name": "camp_only",
+      "body": "camp_only.json"
+    }
+  ],
+  "corpora": [
+    {
+      "name": "camp_only",
+      "documents": [
+        {
+          "target-index": "camp_only",
+          "source-file": "camp_only-documents.json.bz2",
+          "document-count": 1000000,
+          "compressed-bytes": 75532619,
+          "uncompressed-bytes": 1008035605
+        }
+      ]
+    }
+  ],
+  "schedule": [
+    {
+      "operation": {
+        "name": "search-query",
+        "operation-type": "search",
+        "default": true,
+        "detailed-results": true,
+        "assertions": [
+          {
+            "property": "hits",
+            "condition": ">",
+            "value": 0
+          }
+        ],
+        "param-source": "my-custom-term-param-source"
+      },
+      "clients": 5,
+      "warmup-time-period": 5,
+      "time-period": 20
+    }
+  ]
+}

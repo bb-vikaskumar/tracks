@@ -1,0 +1,100 @@
+{
+    "mappings": {
+        "properties": {
+            "bbstar": {
+                "type": "keyword"
+            },
+            "c_brand": {
+                "type": "keyword"
+            },
+            "c_group": {
+                "type": "keyword"
+            },
+            "c_llc": {
+                "type": "keyword"
+            },
+            "c_mlc": {
+                "type": "keyword"
+            },
+            "c_sku_id": {
+                "type": "keyword"
+            },
+            "c_tlc": {
+                "type": "keyword"
+            },
+            "camp_info": {
+                "type": "keyword"
+            },
+            "campaign_id": {
+                "type": "keyword"
+            },
+            "cp": {
+                "type": "keyword"
+            },
+            "dc": {
+                "type": "keyword"
+            },
+            "ds": {
+                "type": "keyword"
+            },
+            "emails": {
+                "type": "keyword"
+            },
+            "entry_context": {
+                "type": "keyword"
+            },
+            "mtype": {
+                "type": "keyword"
+            },
+            "phone_numbers": {
+                "type": "keyword"
+            },
+            "r_brand": {
+                "type": "keyword"
+            },
+            "r_group": {
+                "type": "keyword"
+            },
+            "r_llc": {
+                "type": "keyword"
+            },
+            "r_mlc": {
+                "type": "keyword"
+            },
+            "r_sku_id": {
+                "type": "keyword"
+            },
+            "r_tlc": {
+                "type": "keyword"
+            },
+            "sa_city_ids": {
+                "type": "keyword"
+            },
+            "sa_ids": {
+                "type": "keyword"
+            },
+            "source": {
+                "type": "keyword"
+            },
+            "status": {
+                "type": "keyword"
+            },
+            "tenant": {
+                "type": "keyword"
+            }
+        }
+    },
+    "settings": {
+        "index": {
+            "number_of_replicas": "{{number_of_replicas | default(1)}}",
+            "number_of_shards": "{{number_of_shards | default(1)}}",
+            "routing": {
+                "allocation": {
+                    "include": {
+                        "_tier_preference": "data_content"
+                    }
+                }
+            }
+        }
+    }
+}
